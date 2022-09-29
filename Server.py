@@ -12,7 +12,8 @@ while True:
   print ('Got connection from', addr )
   rawData = c.recv(1024).decode("utf-8")
   data = json.loads(rawData)
-  url = f'https://us-central1-stellar-cipher-364002.cloudfunctions.net/Email-sender?receiver={data["receiver"]}&subject={data["subject"]}&message{data["message"]}'
+  url = f'(HTTP trigger)?receiver={data["receiver"]}\
+  &subject={data["subject"]}&message{data["message"]}' # HTTP trigger need to be replaced
 
   print(url)
 
