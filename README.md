@@ -8,16 +8,16 @@
 
 This script will send the message to the VM server.
 
-#### Server.py `python Server.py`
+#### Server.py should be executed via command line: `python Server.py`
 
 It should receive the message from the client and forward it to the GCP function. You may consider running this script in `tmux`.
 
-#### GCP function script
+#### GCPFunction.py
 
 This procedural script running on a GCP function will simply take the three arguments (address/subject/content), and utilize a python library of choice (smtplib), to send an email to the client's email.
 
 ### Restrictions/Clarifications:
 
-• The client script is able to externally access the "server" running on the VM, that is from outside GCP.
-• You need to setup a Gmail account and "Enable Third-Party Access" to programmatically send emails in the GCP Function
-• You should consider HTTP triggers.
+* The client script is able to externally access the "server" running on the VM, that is from outside GCP.
+* You need to setup a Gmail account and "Enable Third-Party Access" to programmatically send emails in the GCP Function
+* You should consider HTTP triggers.
